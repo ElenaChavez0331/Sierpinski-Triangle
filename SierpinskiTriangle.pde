@@ -1,24 +1,29 @@
-int len = 700;
+int len = 500;
 
-
-
-
-
-public void setup()
-{
-size(700,700);
-background(17,65,42);
+public void setup() {//srstt up
+  size(500, 500);
+  background(169, 207, 193);
 }
-public void draw()
-{
-fill(255);
-sierpinski(0,height.len);
-}
-public void mouseDragged()//optional
-{
 
+public void draw() {
+  fill(255);
+  drawSierpinski(0, height, len);
 }
-public void sierpinski(int x, int y, int len) 
-{
-triangle(x,y,x+len,y,x+len/2,y-len);
+
+public void drawSierpinski(int x, int y, int len) {
+  if (len <= 20) {
+    // Draw a small circle when the recursion depth is reached
+    ellipse(x, y, len / 2, len / 2);
+  } else {
+    // Recursively draw smaller triangles/circles
+    drawSierpinski(x, y, len / 2);
+    drawSierpinski(x + len / 2, y, len / 2);
+   drawSierpinski(x + len / 4, y - len / 2, len / 2);
+    //drawSierpinski(x - len / 4, y +len / 2, len / 2);
+  }
+}
+
+// Optional: mouseDragged() function is currently empty, but can be added here if needed.
+public void mouseDragged() {
+  y+=2;
 }
