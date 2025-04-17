@@ -25,5 +25,5 @@ public void drawSierpinski(int x, int y, int len) {
 
 // Optional: mouseDragged() function is currently empty, but can be added here if needed.
 public void mouseDragged() {
-  y+=2;
+//  y+=2;
 }
